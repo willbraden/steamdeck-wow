@@ -6,13 +6,34 @@ healthy, plus knowing what breaks when.
 
 ## Routine (every ~2 weeks, or after a big patch)
 
+Two ways to run the exact same thing:
+
+**From Game Mode (no Desktop Mode needed) — recommended.** Launch the **"WoW
+Maintenance"** entry in your library. It opens a terminal, runs everything, and
+pauses so you can read the result. Set this up once with
+`scripts/setup-maintenance-shortcut.sh` (see below).
+
+**From Desktop Mode / Konsole:**
+
 ```bash
 cd ~/steamdeck-wow
 ./scripts/update.sh
 ```
 
-That updates Flatpaks, GE-Proton, addons, and this repo. If it installs a new
-GE-Proton, **reselect it** on the Battle.net shortcut and restart Steam.
+Either way it updates Flatpaks, GE-Proton, addons, and this repo. If it installs
+a new GE-Proton, **reselect it** on the Battle.net shortcut and restart Steam.
+
+### One-time: add the Game-Mode maintenance button
+
+In Desktop Mode:
+
+```bash
+./scripts/setup-maintenance-shortcut.sh
+```
+
+Then Steam → Games → **Add a Non-Steam Game** → tick **"WoW Maintenance (Steam
+Deck)"** → Add Selected. It now lives in your Game Mode library next to WoW, and
+you never have to open Konsole for routine updates again.
 
 ## What updates itself (no action needed)
 

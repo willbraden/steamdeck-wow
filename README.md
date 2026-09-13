@@ -14,6 +14,8 @@ automated; the docs cover the Steam-UI steps that can't.
 | `scripts/install.sh` | Installs ProtonUp-Qt + latest **GE-Proton**, downloads the Battle.net installer, prints the exact Steam-UI steps to finish. |
 | `scripts/addons.sh`  | Reproducible addon management via **instawow** — your addon list lives in `config/addons.txt`. |
 | `scripts/update.sh`  | 2-minute maintenance: updates Flatpaks, GE-Proton, addons, and this repo. |
+| `scripts/setup-maintenance-shortcut.sh` | Registers a **"WoW Maintenance"** entry so you can run updates from **Game Mode** — no Desktop Mode needed. |
+| `scripts/maintenance-gui.sh` | The wrapper that shortcut launches (opens a terminal, runs `update.sh`, pauses). |
 | `config/addons.txt`  | Your version-controlled addon set (DBM, WeakAuras, ConsolePort, …). |
 | `config/launch-options.txt` | Copy-paste Steam shortcut targets & launch options. |
 | `docs/` | Full walkthroughs — install, performance, controller, troubleshooting, maintenance. |
@@ -35,7 +37,12 @@ Then, in order:
    ([docs/addons.md](docs/addons.md)).
 3. **Tune** — [docs/performance.md](docs/performance.md) (40 Hz, TDP, graphics).
 4. **Controller** — [docs/controls.md](docs/controls.md) (ConsolePort + Steam Input).
-5. **Maintain** — `./scripts/update.sh` every couple weeks
+5. **Maintain** — register a one-tap Game-Mode updater:
+   ```bash
+   ./scripts/setup-maintenance-shortcut.sh
+   ```
+   then add "WoW Maintenance" via Add-a-Non-Steam-Game. After that, run updates
+   from Game Mode every couple weeks — no Desktop Mode
    ([docs/maintenance.md](docs/maintenance.md)).
 
 ## How it works (the honest version)
