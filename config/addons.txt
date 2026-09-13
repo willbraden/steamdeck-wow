@@ -1,0 +1,20 @@
+# WoW addons managed by instawow (scripts/addons.sh).
+# One per line:  <source>:<slug>
+# Sources: curse (CurseForge), wowi (WoWInterface), github (owner/repo), wago
+# Lines starting with # are ignored. Find slugs on curseforge.com/wow/addons.
+#
+# This is a sensible starter set — trim or add to taste, then run:
+#   scripts/addons.sh sync
+
+# --- Quality of life ---
+curse:deadly-boss-mods           # boss timers/warnings (DBM)
+curse:details                    # damage/healing meter
+curse:weakauras-2                # custom alerts/auras (very popular)
+curse:bagnon                     # unified bags
+
+# --- Controller play (huge on Steam Deck) ---
+curse:consoleport                # full controller UI for WoW — see docs/controls.md
+
+# --- Map / navigation ---
+curse:leatrix-plus               # QoL automation
+# curse:questie                  # (Classic) quest helper — uncomment on Classic

@@ -1,0 +1,38 @@
+Steam launch options & shortcut targets for the Battle.net Non-Steam entry.
+Set these in Steam → right-click the game → Properties → Shortcut / General.
+=============================================================================
+
+STEP 1 — First launch (installing Battle.net)
+  Leave Target pointing at the installer:
+    "…/.cache/steamdeck-wow/Battle.net-Setup.exe"
+  Launch once, complete the install, let it close.
+
+STEP 2 — Repoint the shortcut at the installed launcher
+  After install, the launcher lives inside the Proton prefix. Update the
+  shortcut fields (Properties → Shortcut):
+
+  Target:
+    "Battle.net Launcher.exe"
+
+  Start In:
+    <prefix>/drive_c/Program Files (x86)/Battle.net/
+
+  where <prefix> is typically:
+    ~/.steam/steam/steamapps/compatdata/<APPID>/pfx
+  (Find <APPID>: the numeric folder created after your first launch. See
+   docs/install-guide.md → "Find your prefix".)
+
+STEP 3 — Launch options (paste into the Launch Options box)
+  Recommended baseline:
+    PROTON_USE_WINED3D=0 %command%
+
+  If Battle.net relaunches itself / a helper leaves a black window, try:
+    %command% --exec="launch WoW"        # auto-launch Retail after login
+
+  DXVK is on by default with GE-Proton; do NOT force WineD3D unless debugging.
+
+NOTES
+  • Rename the Steam entry from "Battle.net-Setup.exe" to "Battle.net"
+    (Properties → Shortcut → first field) so it looks right in Game Mode.
+  • Grab box art in Game Mode via the community artwork picker (SteamGridDB
+    integration) so it shows a proper WoW banner.

@@ -1,0 +1,15 @@
+# Downloaded installers / caches (never commit binaries or user data)
+*.exe
+.cache/
+cache/
+
+# Local overrides
+*.local
+config/*.local.txt
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
